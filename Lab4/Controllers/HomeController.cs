@@ -13,6 +13,7 @@ namespace lab4.Controllers
             DateTime today = DateTime.Now;
             String month = DateTime.Now.ToString("MMMM");
             DayOfWeek dayofweek = DateTime.Now.DayOfWeek;
+
             int year = DateTime.Now.Year;
             int day = DateTime.Now.Day;
             String time = today.ToShortTimeString();
@@ -20,8 +21,8 @@ namespace lab4.Controllers
             int daysInYear = DateTime.IsLeapYear(today.Year) ? 366 : 365;
             int daysLeftInYear = daysInYear - today.DayOfYear;
 
-            String date = $"The time is {time} on {dayofweek}, {month} {day}, {year}";
-            String daysleft = $"There are {daysLeftInYear} more days in {year}";
+            String currentDate = $"The time is {time} on {dayofweek}, {month} {day}, {year}";
+            String daysLeft = $"There are {daysLeftInYear} more days in {year}";
             String greeting;
 
             TimeSpan morning = new TimeSpan(11, 59, 59); //Before noon
@@ -41,8 +42,8 @@ namespace lab4.Controllers
                 greeting = "Good Evening!";
             }
 
-            ViewData["date"] = date;
-            ViewData["daysleft"] = daysleft;
+            ViewData["currentDate"] = currentDate;
+            ViewData["daysLeft"] = daysLeft;
             ViewData["greeting"] = greeting;
 
             return View();
