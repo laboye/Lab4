@@ -24,15 +24,15 @@ namespace lab4.Controllers
             String daysleft = $"There are {daysLeftInYear} more days in {year}";
             String greeting;
 
-            TimeSpan start = new TimeSpan(11, 59, 59); //12 o'clock
-            TimeSpan end = new TimeSpan(18, 0, 0); //6 o'clock
+            TimeSpan morning = new TimeSpan(11, 59, 59); //Before noon
+            TimeSpan night = new TimeSpan(18, 0, 0); //(evening) after 6
             TimeSpan now = DateTime.Now.TimeOfDay;
 
             if (DateTime.UtcNow.ToString("tt") == "AM")
             {
-                greeting = "Good Morning";
+                greeting = "Good Morning!";
             }
-            else if ((now > start) && (now < end))
+            else if ((now > morning) && (now < night))
             {
                 greeting = "Good Afternoon!";
             }
@@ -47,7 +47,6 @@ namespace lab4.Controllers
 
             return View();
         }
-
         public IActionResult Items()
         {
             String url = HttpContext.Request.Path;

@@ -1,0 +1,21 @@
+﻿@model String[];
+@{
+    ViewData["Title"] = "Items";
+    int id = Convert.ToInt32(ViewData["id"]);
+}
+<body>
+    <h2>Language List</h2>
+    <ol>
+        @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+    </ol>
+    <h2>Boxes</h2>
+
+        @for (int i = 0; i < id; i++){
+             <div class="box">@(i + 1)</div>
+        }
+
+    <p>@ViewData["url"]</p>
+</body>

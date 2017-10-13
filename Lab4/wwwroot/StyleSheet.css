@@ -2,3 +2,37 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 15px;
 }
+h2 {
+    background-color: lightblue;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+}
+a {
+    text-decoration: none;
+    color: black;
+    border: 2px solid darkblue;
+    border-radius: 15px;
+    padding: 10px;
+}
+.link {
+    padding-top: 30px;
+}
+a:hover {
+    background-color: lightgrey;
+}
+a:active {
+    background-color: lightblue;
+}
+.box {
+    background-color: #0048ff;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    margin: 10px;
+    font-size: xx-large;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 15px;
+}
